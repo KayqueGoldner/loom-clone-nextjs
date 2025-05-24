@@ -20,6 +20,10 @@
 # production
 /build
 
+# xata
+.xata
+.xatarc
+
 # misc
 .DS_Store
 *.pem
