@@ -3,6 +3,7 @@ import { twMerge } from "tailwind-merge";
 import { ilike, sql } from "drizzle-orm";
 // import { videos } from "@/drizzle/schema";
 import { DEFAULT_VIDEO_CONFIG, DEFAULT_RECORDING_CONFIG } from "@/constants";
+import { videos } from "@/drizzle/schema";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -99,7 +100,6 @@ export const withErrorHandling = <T, A extends unknown[]>(
   };
 };
 
-/*
 export const getOrderByClause = (filter?: string) => {
   switch (filter) {
     case "Most Viewed":
@@ -113,7 +113,6 @@ export const getOrderByClause = (filter?: string) => {
       return sql`${videos.createdAt} DESC`;
   }
 };
-*/
 
 export const generatePagination = (currentPage: number, totalPages: number) => {
   if (totalPages <= 7) {
